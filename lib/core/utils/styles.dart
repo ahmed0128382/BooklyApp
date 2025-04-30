@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:storeapp/constants.dart';
 
 abstract class Styles {
   static const titleMedium =
       TextStyle(fontSize: 20, fontWeight: FontWeight.w600);
 
   static const textStyle20 = TextStyle(
-      fontSize: 20, fontWeight: FontWeight.normal, fontFamily: kGtSctraFine);
+    fontSize: 20,
+    fontWeight: FontWeight.normal,
+  );
 
   static const textStyle30 =
       TextStyle(fontSize: 20, fontWeight: FontWeight.w600);

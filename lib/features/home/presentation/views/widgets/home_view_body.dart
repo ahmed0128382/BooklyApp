@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:storeapp/core/utils/styles.dart';
 import 'package:storeapp/features/home/presentation/views/widgets/best_seller_list_view_item.dart';
 import 'package:storeapp/features/home/presentation/views/widgets/custom_app_bar.dart';
@@ -11,23 +12,23 @@ class HomeViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 24.0),
-      child: const Column(
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          CustomAppBr(),
-          FeaturedBooksListView(),
-          SizedBox(
+          const CustomAppBr(),
+          const FeaturedBooksListView(),
+          const SizedBox(
             height: 42,
           ),
           Text(
             'Best Seller',
             //textAlign: TextAlign.left,
-            style: Styles.titleMedium,
+            style: GoogleFonts.gabriela(textStyle: Styles.titleMedium),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
-          BestSellerListViewItem(),
+          const BestSellerListViewItem(),
         ],
       ),
     );
