@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:storeapp/constants.dart';
 import 'package:storeapp/core/utils/assets.dart';
+import 'package:storeapp/core/utils/styles.dart';
 
 class BestSellerListViewItem extends StatelessWidget {
   const BestSellerListViewItem({super.key});
@@ -23,8 +25,21 @@ class BestSellerListViewItem extends StatelessWidget {
               ),
             ),
           ),
+          const SizedBox(
+            width: 30,
+          ),
           Column(
-            children: [],
+            children: [
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.6,
+                child: Text(
+                  'Harry Potter and the Goblit of Fire ',
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  style: Styles.textStyle20,
+                ),
+              )
+            ],
           )
         ],
       ),
