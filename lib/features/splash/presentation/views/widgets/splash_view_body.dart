@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
+
 import 'package:storeapp/constants.dart';
+import 'package:storeapp/core/utils/app_router.dart';
 import 'package:storeapp/core/utils/assets.dart';
-import 'package:storeapp/features/home/presentation/views/home_view.dart';
 import 'package:storeapp/features/splash/presentation/views/widgets/sliding_animation.dart';
 
 class SplashViewBody extends StatefulWidget {
@@ -55,8 +56,9 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
   void navigateToHome() {
     Future.delayed(const Duration(seconds: 2), () {
-      Get.to(() => const HomeView(),
-          transition: Transition.fade, duration: kTransitionDuration);
+      GoRouter.of(context).push(AppRouter.kHomeView);
+      // Get.to(() => const HomeView(),
+      //     transition: Transition.fade, duration: kTransitionDuration);
     });
   }
 }
