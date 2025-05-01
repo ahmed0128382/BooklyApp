@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-
-import 'package:storeapp/constants.dart';
 import 'package:storeapp/core/utils/app_router.dart';
 import 'package:storeapp/core/utils/assets.dart';
 import 'package:storeapp/features/splash/presentation/views/widgets/sliding_animation.dart';
