@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:storeapp/features/home/presentation/views/widgets/book_action.dart';
 import 'package:storeapp/features/home/presentation/views/widgets/book_rating.dart';
 import 'package:storeapp/features/home/presentation/views/widgets/custom_book_details_app_bar.dart';
 import 'package:storeapp/features/home/presentation/views/widgets/custom_list_view_item.dart';
@@ -19,7 +20,7 @@ class BookDetailsViewBody extends StatelessWidget {
           const CustomBookDetailsAppBar(),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: width * 0.19),
-            child: const CustomListViewItem(),
+            child: const CustomBookImage(),
           ),
           SizedBox(
             width: MediaQuery.of(context).size.width * 0.7,
@@ -43,7 +44,11 @@ class BookDetailsViewBody extends StatelessWidget {
           const SizedBox(
             height: 6,
           ),
-          Center(child: const BookRating()),
+          const Center(child: BookRating()),
+          const Padding(
+            padding: EdgeInsets.only(top: 12.0, right: 19, left: 19),
+            child: BookAction(),
+          ),
         ],
       ),
     );
