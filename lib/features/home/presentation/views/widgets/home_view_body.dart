@@ -33,9 +33,12 @@ class HomeViewBody extends StatelessWidget {
               ],
             ),
           ),
-          SliverFillRemaining(
-            child: const BestSellerListView(),
-          )
+          SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (context, index) => const BestSellerListView(),
+              childCount: 1, // Adjust this if needed
+            ),
+          ),
         ],
       ),
     );
