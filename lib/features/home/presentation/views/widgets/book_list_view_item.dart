@@ -6,8 +6,8 @@ import 'package:storeapp/core/utils/assets.dart';
 import 'package:storeapp/core/utils/styles.dart';
 import 'package:storeapp/features/home/presentation/views/widgets/book_rating.dart';
 
-class BestSellerListViewItem extends StatelessWidget {
-  const BestSellerListViewItem({super.key});
+class BookListViewItem extends StatelessWidget {
+  const BookListViewItem({super.key});
 
   @override
   Widget build(BuildContext context) {

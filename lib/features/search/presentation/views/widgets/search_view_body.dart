@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:storeapp/core/utils/assets.dart';
+import 'package:storeapp/core/utils/styles.dart';
 import 'package:storeapp/features/search/presentation/views/widgets/custom_search_text_field.dart';
+import 'package:storeapp/features/search/presentation/views/widgets/search_result_list_view.dart';
 
 class SearchViewBody extends StatelessWidget {
   const SearchViewBody({super.key});
@@ -38,8 +41,19 @@ class SearchViewBody extends StatelessWidget {
                   ),
                 ),
                 const CustomSearchTextField(),
+                const SizedBox(
+                  height: 22,
+                ),
+                Text(
+                  'Search Result',
+                  //textAlign: TextAlign.left,
+                  style: GoogleFonts.gabriela(textStyle: Styles.titleMedium),
+                ),
               ],
             ),
+          ),
+          SliverFillRemaining(
+            child: SearchResultListView(),
           ),
         ],
       ),
