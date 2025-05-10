@@ -13,6 +13,7 @@ class HomeViewBody extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20.0),
       child: CustomScrollView(
+        physics: const BouncingScrollPhysics(),
         slivers: [
           SliverToBoxAdapter(
             child: Column(
@@ -26,7 +27,7 @@ class HomeViewBody extends StatelessWidget {
                   height: 22,
                 ),
                 Text(
-                  'Best Seller',
+                  'Newest Books',
                   //textAlign: TextAlign.left,
                   style: GoogleFonts.gabriela(textStyle: Styles.titleMedium),
                 ),
