@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:storeapp/features/home/presentation/views/widgets/book_list_view_item.dart';
+//import 'package:storeapp/features/home/presentation/views/widgets/book_list_view_item.dart';
 
 class SearchResultListView extends StatelessWidget {
   const SearchResultListView({super.key});
@@ -11,7 +11,8 @@ class SearchResultListView extends StatelessWidget {
         physics: NeverScrollableScrollPhysics(),
         itemCount: 10,
         itemBuilder: (context, index) {
-          return const BookListViewItem();
+          // return const BookListViewItem(book: ,);
+          return Text('Book');
         });
   }
 }

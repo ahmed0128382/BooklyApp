@@ -5,7 +5,9 @@ import 'package:storeapp/features/home/presentation/views/widgets/book_rating.da
 import 'package:storeapp/features/home/presentation/views/widgets/custom_book_image.dart';
 
 class BookDetailsSection extends StatelessWidget {
-  const BookDetailsSection({super.key});
+  const BookDetailsSection({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +43,11 @@ class BookDetailsSection extends StatelessWidget {
         const SizedBox(
           height: 6,
         ),
-        const Center(child: BookRating()),
+        Center(
+            child: BookRating(
+          rating: 3,
+          ratingCount: 4,
+        )),
       ],
     );
   }
