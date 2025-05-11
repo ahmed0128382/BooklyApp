@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:storeapp/core/utils/styles.dart';
-import 'package:storeapp/features/home/data/models/book_model/book_model.dart';
 
 class BookRating extends StatelessWidget {
   const BookRating({

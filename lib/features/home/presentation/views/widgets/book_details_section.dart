@@ -1,14 +1,16 @@
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:storeapp/core/utils/styles.dart';
+import 'package:storeapp/features/home/data/models/book_model/book_model.dart';
 import 'package:storeapp/features/home/presentation/views/widgets/book_rating.dart';
 import 'package:storeapp/features/home/presentation/views/widgets/custom_book_image.dart';
 
 class BookDetailsSection extends StatelessWidget {
   const BookDetailsSection({
     super.key,
+    required this.book,
   });
-
+  final BookModel book;
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
@@ -16,9 +18,8 @@ class BookDetailsSection extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * 0.19),
-          child: const CustomBookImage(
-            imageUrl:
-                'https://t3.ftcdn.net/jpg/05/67/83/54/360_F_567835419_h5ShRnzJ4asY3NWWZspqoDO5hLPUVdVG.jpg',
+          child: CustomBookImage(
+            imageUrl: book.volumeInfo.imageLinks?.thumbnail ?? '',
           ),
         ),
         SizedBox(
@@ -26,7 +27,7 @@ class BookDetailsSection extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.only(bottom: 3),
             child: Text(
-              'Harry Potter and the Goblit of Fire ',
+              book.volumeInfo.title ?? '',
               textAlign: TextAlign.center,
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
@@ -34,8 +35,8 @@ class BookDetailsSection extends StatelessWidget {
             ),
           ),
         ),
-        const Text(
-          'J.K. Rowling ',
+        Text(
+          book.volumeInfo.authors?[0] ?? '',
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
           style: Styles.textStyle18,
@@ -45,8 +46,8 @@ class BookDetailsSection extends StatelessWidget {
         ),
         Center(
             child: BookRating(
-          rating: 3,
-          ratingCount: 4,
+          rating: book.volumeInfo.averageRating ?? 0,
+          ratingCount: book.volumeInfo.ratingsCount ?? 0,
         )),
       ],
     );
