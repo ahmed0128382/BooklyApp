@@ -14,6 +14,7 @@ class VolumeInfo extends Equatable {
   final ReadingModes? readingModes;
   final int? pageCount;
   final String? printType;
+  final List<String>? categories;
   final dynamic averageRating;
   final int? ratingsCount;
   final String? maturityRating;
@@ -27,6 +28,7 @@ class VolumeInfo extends Equatable {
   final String? canonicalVolumeLink;
 
   const VolumeInfo({
+    this.categories,
     this.title,
     this.authors,
     this.publisher,
@@ -62,6 +64,7 @@ class VolumeInfo extends Equatable {
                 json['readingModes'] as Map<String, dynamic>),
         pageCount: json['pageCount'] as int?,
         printType: json['printType'] as String?,
+        categories: (json['categories'] as List<dynamic>?)?.cast<String>(),
         averageRating: json['averageRating'] as dynamic,
         ratingsCount: json['ratingsCount'] as int?,
         maturityRating: json['maturityRating'] as String?,
@@ -90,6 +93,7 @@ class VolumeInfo extends Equatable {
         'readingModes': readingModes?.toJson(),
         'pageCount': pageCount,
         'printType': printType,
+        'categories': categories,
         'averageRating': averageRating,
         'ratingsCount': ratingsCount,
         'maturityRating': maturityRating,
@@ -114,6 +118,7 @@ class VolumeInfo extends Equatable {
       readingModes,
       pageCount,
       printType,
+      categories,
       averageRating,
       ratingsCount,
       maturityRating,
