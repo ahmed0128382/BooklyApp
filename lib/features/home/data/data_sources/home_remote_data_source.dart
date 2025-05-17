@@ -38,6 +38,7 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
     for (var item in data['items']) {
       books.add(BookModel.fromJson(item));
     }
+    saveData(books, kNewestBox);
     return books;
   }
 
@@ -52,6 +53,7 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
     for (var item in data['items']) {
       books.add(BookModel.fromJson(item));
     }
+    saveData(books, kRelevantBox);
     return books;
   }
 }
