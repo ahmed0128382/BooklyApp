@@ -12,7 +12,7 @@ import 'package:storeapp/features/home/presentation/manager/newest_books_cubit/n
 
 void main() async {
   Hive.registerAdapter(BookEntityAdapter());
-  await Hive.openBox(kfeaturedBox);
+  await Hive.openBox(kFeaturedBox);
   setupServiceLocator();
   runApp(const BooklyApp());
 }

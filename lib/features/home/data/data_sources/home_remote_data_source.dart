@@ -1,4 +1,6 @@
+import 'package:storeapp/constants.dart';
 import 'package:storeapp/core/utils/api_service.dart';
+import 'package:storeapp/core/utils/functions/save_box_data.dart';
 import 'package:storeapp/features/home/data/models/book_model/book_model.dart';
 import 'package:storeapp/features/home/domain/entities/book_entity.dart';
 
@@ -22,6 +24,7 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
     for (var item in data['items']) {
       books.add(BookModel.fromJson(item));
     }
+    saveData(books, kFeaturedBox);
     return books;
   }
 
