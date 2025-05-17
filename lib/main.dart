@@ -11,8 +11,11 @@ import 'package:storeapp/features/home/presentation/manager/featured_books_cubit
 import 'package:storeapp/features/home/presentation/manager/newest_books_cubit/newest_books_cubit.dart';
 
 void main() async {
+  await Hive.initFlutter();
   Hive.registerAdapter(BookEntityAdapter());
-  await Hive.openBox(kfeaturedBox);
+  await Hive.openBox<BookEntity>(kFeaturedBox);
+  await Hive.openBox<BookEntity>(kNewestBox);
+  await Hive.openBox<BookEntity>(kRelevantBox);
   setupServiceLocator();
   runApp(const BooklyApp());
 }
