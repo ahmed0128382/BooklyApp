@@ -32,15 +32,41 @@ class HomeRepoImpl implements HomeRepo {
   }
 
   @override
-  Future<Either<Failure, List<BookEntity>>> fetchNewestBooks() {
-    // TODO: implement fetchNewestBooks
-    throw UnimplementedError();
+  Future<Either<Failure, List<BookEntity>>> fetchNewestBooks() async {
+    try {
+      var booksLocal = homeLocalDataSource.fetchNewestBooks();
+      if (booksLocal.isNotEmpty) {
+        return right(booksLocal);
+      }
+      var books = await homeRemoteDataSource.fetchNewestBooks();
+      return right(books);
+    } on Exception catch (e) {
+      if (e is DioException) {
+        return left(ServerFailure.fromDioError(e));
+      } else {
+        return left(ServerFailure("errMessage"));
+      }
+    }
   }
 
   @override
   Future<Either<Failure, List<BookEntity>>> fetchRelevanceBooks(
-      {required String category}) {
-    // TODO: implement fetchRelevanceBooks
-    throw UnimplementedError();
+      {required String category}) async {
+    try {
+      var booksLocal =
+          homeLocalDataSource.fetchRelevanceBooks(category: category);
+      if (booksLocal.isNotEmpty) {
+        return right(booksLocal);
+      }
+      var books =
+          await homeRemoteDataSource.fetchRelevanceBooks(category: category);
+      return right(books);
+    } on Exception catch (e) {
+      if (e is DioException) {
+        return left(ServerFailure.fromDioError(e));
+      } else {
+        return left(ServerFailure("errMessage"));
+      }
+    }
   }
 }
